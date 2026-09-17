@@ -40,6 +40,7 @@ export default function Home() {
   const [selectedDate, setSelectedDate] = useState(() => dateKey(today));
   const [room, setRoom] = useState<Room>(rooms[0]);
   const [selectedPeriod, setSelectedPeriod] = useState<number | null>(null);
+  const [scheduleOpen, setScheduleOpen] = useState(false);
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [name, setName] = useState("");
   const [notice, setNotice] = useState("");
@@ -68,6 +69,7 @@ export default function Home() {
     setMonth(new Date(day.getFullYear(), day.getMonth(), 1));
     setSelectedPeriod(null);
     setNotice("");
+    setScheduleOpen(true);
   }
 
   function submitBooking(event: FormEvent) {
@@ -125,7 +127,7 @@ export default function Home() {
           <button
             className={room === item ? "active" : ""}
             key={item}
-            onClick={() => { setRoom(item); setSelectedPeriod(null); setNotice(""); }}
+            onClick={() => { setRoom(item); setSelectedPeriod(null); setNotice(""); setScheduleOpen(false); }}
           >
             <strong>{item}</strong>
           </button>
@@ -173,10 +175,13 @@ export default function Home() {
           </div>
         </article>
 
-        <article className="scheduleCard">
+        {scheduleOpen && <article className="scheduleCard" aria-label={`${selectedLabel} 예약`}>
           <div className="scheduleHead">
             <div><p>{room}</p><h3>{selectedLabel}</h3></div>
-            <span>{8 - dayBookings.length}자리 남음</span>
+            <div className="scheduleActions">
+              <span>{8 - dayBookings.length}자리 남음</span>
+              <button className="closeSchedule" onClick={() => setScheduleOpen(false)} aria-label="예약 교시 닫기">×</button>
+            </div>
           </div>
           <div className="periodGrid">
             {periods.map((period) => {
@@ -210,7 +215,7 @@ export default function Home() {
           )}
           {!selectedPeriod && <div className="emptyGuide">예약할 교시를 선택해 주세요.</div>}
           {notice && <div className="notice" role="status">{notice}</div>}
-        </article>
+        </article>}
       </section>
 
       <footer><small>예약 변경이 필요할 때는 해당 교시를 다시 선택해 주세요.</small></footer>

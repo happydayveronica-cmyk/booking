@@ -16,15 +16,17 @@ main { min-height:100vh; }
 .roomTabs button { flex:1; min-height:116px; display:flex; align-items:center; justify-content:center; padding:24px 28px; border:1px solid var(--line); border-radius:18px 18px 0 0; background:#e6f1f4; text-align:center; cursor:pointer; opacity:.72; }
 .roomTabs button.active { color:white; background:var(--green); border-color:var(--green); opacity:1; }
 .roomTabs strong { display:block; font-size:22px; }
-.workspace { padding:30px max(calc((100vw - 1140px)/2),30px) 70px; background:linear-gradient(135deg,#087f9e,#145b91); display:grid; grid-template-columns:1.05fr .95fr; gap:24px; }
-.calendarCard,.scheduleCard { min-height:570px; padding:28px; border-radius:18px; background:#fbfdfe; box-shadow:0 14px 30px #073d5a3d; }
+.workspace { position:relative; padding:30px max(calc((100vw - 1140px)/2),30px) 70px; background:linear-gradient(135deg,#087f9e,#145b91); }
+.calendarCard,.scheduleCard { min-height:720px; padding:32px; border-radius:18px; background:#fbfdfe; box-shadow:0 14px 30px #073d5a3d; }
+.scheduleCard { position:absolute; z-index:5; inset:30px max(calc((100vw - 1140px)/2),30px) 70px; animation:showSchedule .2s ease-out; }
+@keyframes showSchedule { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
 .cardHead,.scheduleHead { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
 .cardHead h3,.scheduleHead h3 { margin:5px 0 0; font-family:"DM Serif Display","Noto Sans KR",serif; font-size:25px; }
 .monthNav { display:flex; gap:6px; }
 .monthNav button { border:1px solid var(--line); background:white; border-radius:8px; padding:7px 10px; cursor:pointer; }
 .calendar { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
 .weekday { padding:5px; text-align:center; font-size:12px; color:#78857f; }
-.day { position:relative; min-width:0; min-height:104px; padding:8px 6px; border:0; border-radius:10px; background:transparent; cursor:pointer; text-align:left; overflow:hidden; }
+.day { position:relative; min-width:0; min-height:118px; padding:10px 8px; border:0; border-radius:10px; background:transparent; cursor:pointer; text-align:left; overflow:hidden; }
 .day:hover { background:#e9eee8; }
 .day.selected { background:var(--orange); color:white; }
 .day.muted { opacity:.27; }
@@ -36,7 +38,10 @@ main { min-height:100vh; }
 .day.selected .calendarBooking { color:#114865; background:#fff; }
 .day.selected .calendarBooking b { color:#1768a8; }
 .day.selected .moreBookings { color:#fff; }
-.scheduleHead>span { padding:7px 10px; border-radius:99px; color:var(--green); background:var(--mint); font-size:11px; font-weight:700; }
+.scheduleActions { display:flex; align-items:center; gap:10px; }
+.scheduleActions>span { padding:7px 10px; border-radius:99px; color:var(--green); background:var(--mint); font-size:11px; font-weight:700; }
+.closeSchedule { width:38px; height:38px; border:1px solid var(--line); border-radius:50%; color:#176283; background:white; font-size:25px; line-height:1; cursor:pointer; }
+.closeSchedule:hover { color:white; background:var(--orange); border-color:var(--orange); }
 .periodGrid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
 .periodGrid button { min-height:96px; padding:12px 6px; border-radius:12px; cursor:pointer; transition:.16s ease; }
 .periodGrid b { font-family:"DM Serif Display",serif; font-size:26px; }
@@ -65,10 +70,11 @@ footer { display:flex; justify-content:flex-end; align-items:center; padding:34p
   .topbar { align-items:flex-start; }
   .brand { align-items:flex-start; flex-direction:column; gap:10px; }
   .schoolLogo { width:min(300px,60vw); }
-  .workspace { grid-template-columns:1fr; padding-left:16px; padding-right:16px; }
+  .workspace { padding-left:16px; padding-right:16px; }
+  .scheduleCard { left:16px; right:16px; }
   .roomTabs { padding:0 16px; }
   .roomTabs button { padding:13px; }
-  .calendarCard,.scheduleCard { min-height:auto; padding:20px 15px; }
+  .calendarCard,.scheduleCard { min-height:650px; padding:20px 15px; }
   .bookingForm { grid-template-columns:1fr; }
   .bookingForm p { grid-column:auto; }
   footer { justify-content:flex-start; }
