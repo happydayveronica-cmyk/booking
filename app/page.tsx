@@ -212,7 +212,8 @@ export default function Home() {
             ) : (
               <form onSubmit={submitBooking} className="bookingForm">
                 <p><strong>{selectedPeriod}교시</strong> 예약하기</p>
-                <label>예약자<input value={name} onChange={(e) => setName(e.target.value)} placeholder="이름을 입력하세요" required /></label>
+                <span className="nameGuide">예약자가 여러 명이면 쉼표(,)로 구분해 주세요. <b>예: 김민서, 이서준, 박지우</b></span>
+                <label>예약자<input value={name} onChange={(e) => setName(e.target.value)} placeholder="예: 김민서, 이서준, 박지우" required /></label>
                 <button type="submit">예약 확정</button>
               </form>
             )

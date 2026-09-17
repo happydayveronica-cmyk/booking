@@ -57,6 +57,8 @@ main { min-height:100vh; }
 .bookingForm p { margin:0 0 12px; }
 .bookingForm { display:grid; grid-template-columns:1fr auto; gap:10px; align-items:end; }
 .bookingForm p { grid-column:1/-1; }
+.nameGuide { grid-column:1/-1; margin-top:-4px; color:#557582; font-size:12px; }
+.nameGuide b { color:#1768a8; font-weight:700; }
 .bookingForm label { font-size:11px; font-weight:700; }
 .bookingForm input { width:100%; margin-top:6px; padding:11px; border:1px solid #cbd6cc; border-radius:8px; background:white; outline:none; }
 .bookingForm input:focus { border-color:var(--green); }
