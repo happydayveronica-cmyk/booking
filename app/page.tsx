@@ -203,7 +203,7 @@ export default function Home() {
         </article>
       </section>
 
-      <footer><span>특별실 예약</span><p>서로의 수업을 존중하는 작은 약속</p><small>예약 변경이 필요할 때는 해당 교시를 다시 선택해 주세요.</small></footer>
+      <footer><small>예약 변경이 필요할 때는 해당 교시를 다시 선택해 주세요.</small></footer>
     </main>
   );
 }

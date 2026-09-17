@@ -57,9 +57,7 @@ main { min-height:100vh; }
 .bookingDetail button { background:var(--orange); }
 .emptyGuide { margin-top:22px; padding:20px; border:1px dashed #cbd3cb; border-radius:12px; color:#7c8983; text-align:center; font-size:13px; }
 .notice { margin-top:10px; color:var(--orange); font-size:12px; text-align:center; }
-footer { display:flex; align-items:center; gap:20px; padding:34px max(5vw,32px); color:#607985; background:#e4f0f3; font-size:12px; }
-footer span { color:var(--green); font-weight:700; }
-footer small { margin-left:auto; }
+footer { display:flex; justify-content:flex-end; align-items:center; padding:34px max(5vw,32px); color:#607985; background:#e4f0f3; font-size:12px; }
 @media(max-width:800px) {
   .topbar { align-items:flex-start; }
   .brand { align-items:flex-start; flex-direction:column; gap:10px; }
@@ -70,8 +68,7 @@ footer small { margin-left:auto; }
   .calendarCard,.scheduleCard { min-height:auto; padding:20px 15px; }
   .bookingForm { grid-template-columns:1fr; }
   .bookingForm p { grid-column:auto; }
-  footer { align-items:flex-start; flex-direction:column; gap:6px; }
-  footer small { margin-left:0; }
+  footer { justify-content:flex-start; }
 }
 @media(max-width:480px) {
   .topbar { min-height:0; padding:14px 16px; }
