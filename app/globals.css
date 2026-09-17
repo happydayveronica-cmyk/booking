@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap');
 
 :root { --ink:#17354a; --green:#0786a6; --mint:#d9f1f5; --paper:#f4f9fa; --line:#cbdde2; --orange:#1768a8; }
 * { box-sizing:border-box; }
-body { margin:0; color:var(--ink); background:var(--paper); font-family:"Noto Sans KR",sans-serif; }
+body { margin:0; color:var(--ink); background:var(--paper); font-family:"Gowun Dodum",sans-serif; letter-spacing:-.01em; }
 button,input { font:inherit; }
 button { color:inherit; }
 main { min-height:100vh; }
 .topbar { min-height:122px; display:flex; align-items:center; gap:24px; padding:18px max(5vw,32px); border-bottom:1px solid #c9dfe5; background:#fff; }
 .brand { display:flex; align-items:center; gap:28px; min-width:0; }
 .schoolLogo { width:clamp(220px,25vw,340px); height:auto; object-fit:contain; }
-.topbar h1 { margin:0; font-size:clamp(21px,2.2vw,32px); line-height:1.25; white-space:nowrap; }
+.topbar h1 { margin:0; font-family:"Gowun Batang",serif; font-size:clamp(21px,2.2vw,32px); line-height:1.25; font-weight:700; white-space:nowrap; }
 .eyebrow,.cardHead p,.scheduleHead p { margin:0; color:#6a7f75; font-size:11px; font-weight:700; letter-spacing:.15em; }
 .todayChip { margin-left:auto; padding:10px 16px; border:1px solid #bfd9e0; border-radius:99px; color:#176283; background:#edf8fa; font-size:13px; }
 .roomTabs { max-width:1200px; margin:0 auto; padding:42px 30px 0; display:flex; gap:16px; }
@@ -21,7 +21,7 @@ main { min-height:100vh; }
 .scheduleCard { position:absolute; z-index:5; inset:30px max(calc((100vw - 1140px)/2),30px) 70px; animation:showSchedule .2s ease-out; }
 @keyframes showSchedule { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
 .cardHead,.scheduleHead { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
-.cardHead h3,.scheduleHead h3 { margin:5px 0 0; font-family:"DM Serif Display","Noto Sans KR",serif; font-size:25px; }
+.cardHead h3,.scheduleHead h3 { margin:5px 0 0; font-family:"Gowun Batang",serif; font-size:25px; font-weight:700; }
 .monthNav { display:flex; gap:6px; }
 .monthNav button { border:1px solid var(--line); background:white; border-radius:8px; padding:7px 10px; cursor:pointer; }
 .calendar { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
