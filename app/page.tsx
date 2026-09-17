@@ -10,7 +10,6 @@ type Booking = {
   room: Room;
   period: number;
   name: string;
-  purpose: string;
 };
 
 const rooms: Room[] = ["교과2실", "수업나눔카페"];
@@ -43,7 +42,6 @@ export default function Home() {
   const [selectedPeriod, setSelectedPeriod] = useState<number | null>(null);
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [name, setName] = useState("");
-  const [purpose, setPurpose] = useState("");
   const [notice, setNotice] = useState("");
 
   useEffect(() => {
@@ -74,7 +72,7 @@ export default function Home() {
 
   function submitBooking(event: FormEvent) {
     event.preventDefault();
-    if (!selectedPeriod || !name.trim() || !purpose.trim()) return;
+    if (!selectedPeriod || !name.trim()) return;
     if (selectedBooking) {
       setNotice("이미 예약된 시간입니다.");
       return;
@@ -85,11 +83,9 @@ export default function Home() {
       room,
       period: selectedPeriod,
       name: name.trim(),
-      purpose: purpose.trim(),
     };
     setBookings((current) => [...current, booking]);
     setName("");
-    setPurpose("");
     setSelectedPeriod(null);
     setNotice("예약이 완료되었습니다.");
   }
@@ -191,14 +187,13 @@ export default function Home() {
           {selectedPeriod && (
             selectedBooking ? (
               <div className="bookingDetail">
-                <div><p>{selectedPeriod}교시 예약 정보</p><strong>{selectedBooking.name}</strong><span>{selectedBooking.purpose}</span></div>
+                <div><p>{selectedPeriod}교시 예약 정보</p><strong>{selectedBooking.name}</strong></div>
                 <button onClick={() => cancelBooking(selectedBooking.id)}>예약 취소</button>
               </div>
             ) : (
               <form onSubmit={submitBooking} className="bookingForm">
                 <p><strong>{selectedPeriod}교시</strong> 예약하기</p>
                 <label>예약자<input value={name} onChange={(e) => setName(e.target.value)} placeholder="이름을 입력하세요" required /></label>
-                <label>사용 목적<input value={purpose} onChange={(e) => setPurpose(e.target.value)} placeholder="예: 2학년 프로젝트 수업" required /></label>
                 <button type="submit">예약 확정</button>
               </form>
             )

@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
 
-:root { --ink:#1f2e2a; --green:#244d41; --mint:#dce9de; --paper:#f7f4ec; --line:#d9ded7; --orange:#e36d43; }
+:root { --ink:#17354a; --green:#0786a6; --mint:#d9f1f5; --paper:#f4f9fa; --line:#cbdde2; --orange:#1768a8; }
 * { box-sizing:border-box; }
 body { margin:0; color:var(--ink); background:var(--paper); font-family:"Noto Sans KR",sans-serif; }
 button,input { font:inherit; }
 button { color:inherit; }
 main { min-height:100vh; }
-.topbar { min-height:122px; display:flex; align-items:center; gap:24px; padding:18px max(5vw,32px); border-bottom:1px solid #d7d9d2; }
+.topbar { min-height:122px; display:flex; align-items:center; gap:24px; padding:18px max(5vw,32px); border-bottom:1px solid #c9dfe5; background:#fff; }
 .brand { display:flex; align-items:center; gap:28px; min-width:0; }
 .schoolLogo { width:clamp(220px,25vw,340px); height:auto; object-fit:contain; }
 .topbar h1 { margin:0; font-size:clamp(21px,2.2vw,32px); line-height:1.25; white-space:nowrap; }
 .eyebrow,.cardHead p,.scheduleHead p { margin:0; color:#6a7f75; font-size:11px; font-weight:700; letter-spacing:.15em; }
-.todayChip { margin-left:auto; padding:10px 16px; border:1px solid #ccd4cc; border-radius:99px; font-size:13px; }
+.todayChip { margin-left:auto; padding:10px 16px; border:1px solid #bfd9e0; border-radius:99px; color:#176283; background:#edf8fa; font-size:13px; }
 .roomTabs { max-width:1200px; margin:0 auto; padding:42px 30px 0; display:flex; gap:16px; }
-.roomTabs button { flex:1; min-height:116px; display:flex; align-items:center; gap:20px; padding:24px 28px; border:1px solid var(--line); border-radius:18px 18px 0 0; background:#eeeae1; text-align:left; cursor:pointer; opacity:.67; }
+.roomTabs button { flex:1; min-height:116px; display:flex; align-items:center; gap:20px; padding:24px 28px; border:1px solid var(--line); border-radius:18px 18px 0 0; background:#e6f1f4; text-align:left; cursor:pointer; opacity:.72; }
 .roomTabs button.active { color:white; background:var(--green); border-color:var(--green); opacity:1; }
 .roomTabs button>span { width:52px; height:52px; flex:0 0 52px; display:grid; place-items:center; border:1px solid currentColor; border-radius:50%; font-family:"DM Serif Display",serif; font-size:20px; }
 .roomTabs strong,.roomTabs small { display:block; }
 .roomTabs strong { font-size:18px; }
 .roomTabs small { margin-top:6px; font-size:12px; opacity:.67; }
-.workspace { padding:30px max(calc((100vw - 1140px)/2),30px) 70px; background:var(--green); display:grid; grid-template-columns:1.05fr .95fr; gap:24px; }
-.calendarCard,.scheduleCard { min-height:570px; padding:28px; border-radius:18px; background:#fbfaf5; box-shadow:0 14px 30px #15352b44; }
+.workspace { padding:30px max(calc((100vw - 1140px)/2),30px) 70px; background:linear-gradient(135deg,#087f9e,#145b91); display:grid; grid-template-columns:1.05fr .95fr; gap:24px; }
+.calendarCard,.scheduleCard { min-height:570px; padding:28px; border-radius:18px; background:#fbfdfe; box-shadow:0 14px 30px #073d5a3d; }
 .cardHead,.scheduleHead { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
 .cardHead h3,.scheduleHead h3 { margin:5px 0 0; font-family:"DM Serif Display","Noto Sans KR",serif; font-size:25px; }
 .monthNav { display:flex; gap:6px; }
@@ -45,7 +45,7 @@ main { min-height:100vh; }
 .periodGrid .booked small { color:var(--orange); }
 .bookingForm,.bookingDetail { margin-top:22px; padding:18px; border-radius:12px; background:#e8eee7; }
 .bookingForm p { margin:0 0 12px; }
-.bookingForm { display:grid; grid-template-columns:1fr 1.4fr auto; gap:10px; align-items:end; }
+.bookingForm { display:grid; grid-template-columns:1fr auto; gap:10px; align-items:end; }
 .bookingForm p { grid-column:1/-1; }
 .bookingForm label { font-size:11px; font-weight:700; }
 .bookingForm input { width:100%; margin-top:6px; padding:11px; border:1px solid #cbd6cc; border-radius:8px; background:white; outline:none; }
@@ -57,7 +57,7 @@ main { min-height:100vh; }
 .bookingDetail button { background:var(--orange); }
 .emptyGuide { margin-top:22px; padding:20px; border:1px dashed #cbd3cb; border-radius:12px; color:#7c8983; text-align:center; font-size:13px; }
 .notice { margin-top:10px; color:var(--orange); font-size:12px; text-align:center; }
-footer { display:flex; align-items:center; gap:20px; padding:34px max(5vw,32px); color:#6b7771; background:#ede9df; font-size:12px; }
+footer { display:flex; align-items:center; gap:20px; padding:34px max(5vw,32px); color:#607985; background:#e4f0f3; font-size:12px; }
 footer span { color:var(--green); font-weight:700; }
 footer small { margin-left:auto; }
 @media(max-width:800px) {
