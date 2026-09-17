@@ -24,12 +24,18 @@ main { min-height:100vh; }
 .monthNav button { border:1px solid var(--line); background:white; border-radius:8px; padding:7px 10px; cursor:pointer; }
 .calendar { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
 .weekday { padding:5px; text-align:center; font-size:12px; color:#78857f; }
-.day { position:relative; aspect-ratio:1.15; border:0; border-radius:10px; background:transparent; cursor:pointer; }
+.day { position:relative; min-width:0; min-height:104px; padding:8px 6px; border:0; border-radius:10px; background:transparent; cursor:pointer; text-align:left; overflow:hidden; }
 .day:hover { background:#e9eee8; }
 .day.selected { background:var(--orange); color:white; }
 .day.muted { opacity:.27; }
-.day i { position:absolute; right:7px; bottom:6px; width:18px; height:18px; display:grid; place-items:center; border-radius:50%; background:var(--green); color:white; font-size:9px; font-style:normal; }
-.day.selected i { background:white; color:var(--orange); }
+.dayNumber { display:block; margin-bottom:6px; text-align:center; font-weight:600; }
+.calendarBookings { display:flex; flex-direction:column; gap:3px; min-width:0; }
+.calendarBooking,.moreBookings { display:block; min-width:0; padding:3px 4px; border-radius:5px; color:#17546f; background:#dceff3; font-size:9px; line-height:1.25; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.calendarBooking b { color:#1768a8; font-size:8px; }
+.moreBookings { color:#476b7a; background:transparent; text-align:center; }
+.day.selected .calendarBooking { color:#114865; background:#fff; }
+.day.selected .calendarBooking b { color:#1768a8; }
+.day.selected .moreBookings { color:#fff; }
 .scheduleHead>span { padding:7px 10px; border-radius:99px; color:var(--green); background:var(--mint); font-size:11px; font-weight:700; }
 .periodGrid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
 .periodGrid button { min-height:96px; padding:12px 6px; border-radius:12px; cursor:pointer; transition:.16s ease; }
@@ -75,4 +81,10 @@ footer { display:flex; justify-content:flex-end; align-items:center; padding:34p
   .roomTabs { padding-top:26px; }
   .roomTabs button { min-height:96px; padding:16px; }
   .periodGrid { grid-template-columns:repeat(2,1fr); }
+  .calendar { gap:3px; }
+  .day { min-height:82px; padding:6px 3px; }
+  .calendarBooking { padding:2px; font-size:8px; }
+  .calendarBooking b { display:block; }
+  .calendarBooking:nth-child(n+3) { display:none; }
+  .moreBookings { font-size:8px; }
 }

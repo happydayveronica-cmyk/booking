@@ -146,7 +146,9 @@ export default function Home() {
             {weekdays.map((day) => <div className="weekday" key={day}>{day}</div>)}
             {days.map((day) => {
               const key = dateKey(day);
-              const count = bookings.filter((booking) => booking.date === key && booking.room === room).length;
+              const dateBookings = bookings
+                .filter((booking) => booking.date === key && booking.room === room)
+                .sort((a, b) => a.period - b.period);
               const muted = day.getMonth() !== month.getMonth();
               return (
                 <button
@@ -154,8 +156,17 @@ export default function Home() {
                   className={`day ${selectedDate === key ? "selected" : ""} ${muted ? "muted" : ""}`}
                   onClick={() => selectDay(day)}
                 >
-                  <span>{day.getDate()}</span>
-                  {count > 0 && <i>{count}</i>}
+                  <span className="dayNumber">{day.getDate()}</span>
+                  <span className="calendarBookings">
+                    {dateBookings.slice(0, 3).map((booking) => (
+                      <span className="calendarBooking" key={booking.id}>
+                        <b>{booking.period}교시</b> {booking.name}
+                      </span>
+                    ))}
+                    {dateBookings.length > 3 && (
+                      <span className="moreBookings">외 {dateBookings.length - 3}건</span>
+                    )}
+                  </span>
                 </button>
               );
             })}
