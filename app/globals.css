@@ -16,6 +16,7 @@ main { min-height:100vh; }
 .roomTabs button { flex:1; min-height:116px; display:flex; align-items:center; justify-content:center; padding:24px 28px; border:1px solid var(--line); border-radius:18px 18px 0 0; background:#e6f1f4; text-align:center; cursor:pointer; opacity:.72; }
 .roomTabs button.active { color:white; background:var(--green); border-color:var(--green); opacity:1; }
 .roomTabs strong { display:block; font-size:22px; }
+.roomEmoji { display:inline-block; margin-right:9px; font-size:26px; vertical-align:-2px; }
 .workspace { position:relative; padding:30px max(calc((100vw - 1140px)/2),30px) 70px; background:linear-gradient(135deg,#087f9e,#145b91); }
 .calendarCard,.scheduleCard { min-height:720px; padding:32px; border-radius:18px; background:#fbfdfe; box-shadow:0 14px 30px #073d5a3d; }
 .scheduleCard { position:absolute; z-index:5; inset:30px max(calc((100vw - 1140px)/2),30px) 70px; animation:showSchedule .2s ease-out; }

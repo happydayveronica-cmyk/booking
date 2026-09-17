@@ -129,7 +129,7 @@ export default function Home() {
             key={item}
             onClick={() => { setRoom(item); setSelectedPeriod(null); setNotice(""); setScheduleOpen(false); }}
           >
-            <strong>{item}</strong>
+            <strong><span className="roomEmoji" aria-hidden="true">{item === "교과2실" ? "🐻" : "🐰"}</span>{item}</strong>
           </button>
         ))}
       </div>
