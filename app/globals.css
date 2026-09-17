@@ -13,12 +13,9 @@ main { min-height:100vh; }
 .eyebrow,.cardHead p,.scheduleHead p { margin:0; color:#6a7f75; font-size:11px; font-weight:700; letter-spacing:.15em; }
 .todayChip { margin-left:auto; padding:10px 16px; border:1px solid #bfd9e0; border-radius:99px; color:#176283; background:#edf8fa; font-size:13px; }
 .roomTabs { max-width:1200px; margin:0 auto; padding:42px 30px 0; display:flex; gap:16px; }
-.roomTabs button { flex:1; min-height:116px; display:flex; align-items:center; gap:20px; padding:24px 28px; border:1px solid var(--line); border-radius:18px 18px 0 0; background:#e6f1f4; text-align:left; cursor:pointer; opacity:.72; }
+.roomTabs button { flex:1; min-height:116px; display:flex; align-items:center; justify-content:center; padding:24px 28px; border:1px solid var(--line); border-radius:18px 18px 0 0; background:#e6f1f4; text-align:center; cursor:pointer; opacity:.72; }
 .roomTabs button.active { color:white; background:var(--green); border-color:var(--green); opacity:1; }
-.roomTabs button>span { width:52px; height:52px; flex:0 0 52px; display:grid; place-items:center; border:1px solid currentColor; border-radius:50%; font-family:"DM Serif Display",serif; font-size:20px; }
-.roomTabs strong,.roomTabs small { display:block; }
-.roomTabs strong { font-size:18px; }
-.roomTabs small { margin-top:6px; font-size:12px; opacity:.67; }
+.roomTabs strong { display:block; font-size:22px; }
 .workspace { padding:30px max(calc((100vw - 1140px)/2),30px) 70px; background:linear-gradient(135deg,#087f9e,#145b91); display:grid; grid-template-columns:1.05fr .95fr; gap:24px; }
 .calendarCard,.scheduleCard { min-height:570px; padding:28px; border-radius:18px; background:#fbfdfe; box-shadow:0 14px 30px #073d5a3d; }
 .cardHead,.scheduleHead { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
@@ -77,6 +74,5 @@ footer { display:flex; justify-content:flex-end; align-items:center; padding:34p
   .todayChip { display:none; }
   .roomTabs { padding-top:26px; }
   .roomTabs button { min-height:96px; padding:16px; }
-  .roomTabs small { display:none; }
   .periodGrid { grid-template-columns:repeat(2,1fr); }
 }

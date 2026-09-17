@@ -127,8 +127,7 @@ export default function Home() {
             key={item}
             onClick={() => { setRoom(item); setSelectedPeriod(null); setNotice(""); }}
           >
-            <span>{item === "교과2실" ? "02" : "C"}</span>
-            <div><strong>{item}</strong><small>{item === "교과2실" ? "집중 수업 공간" : "함께 나누는 공간"}</small></div>
+            <strong>{item}</strong>
           </button>
         ))}
       </div>
