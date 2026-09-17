@@ -22,6 +22,7 @@ main { min-height:100vh; }
 @keyframes showSchedule { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
 .cardHead,.scheduleHead { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
 .cardHead h3,.scheduleHead h3 { margin:5px 0 0; font-family:"Gowun Batang",serif; font-size:25px; font-weight:700; }
+.calendarHelp { display:block; margin-top:7px; color:#557582; font-size:13px; }
 .monthNav { display:flex; gap:6px; }
 .monthNav button { border:1px solid var(--line); background:white; border-radius:8px; padding:7px 10px; cursor:pointer; }
 .calendar { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
@@ -32,8 +33,8 @@ main { min-height:100vh; }
 .day.muted { opacity:.27; }
 .dayNumber { display:block; margin-bottom:6px; text-align:center; font-weight:600; }
 .calendarBookings { display:flex; flex-direction:column; gap:3px; min-width:0; }
-.calendarBooking,.moreBookings { display:block; min-width:0; padding:3px 4px; border-radius:5px; color:#17546f; background:#dceff3; font-size:9px; line-height:1.25; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.calendarBooking b { color:#1768a8; font-size:8px; }
+.calendarBooking,.moreBookings { display:block; min-width:0; padding:4px 6px; border-radius:5px; color:#123f55; background:#d5edf3; font-size:12px; font-weight:600; line-height:1.25; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.calendarBooking b { color:#075f98; font-size:11px; font-weight:700; }
 .moreBookings { color:#476b7a; background:transparent; text-align:center; }
 .day.selected .calendarBooking { color:#114865; background:#fff; }
 .day.selected .calendarBooking b { color:#1768a8; }
@@ -89,8 +90,8 @@ footer { display:flex; justify-content:flex-end; align-items:center; padding:34p
   .periodGrid { grid-template-columns:repeat(2,1fr); }
   .calendar { gap:3px; }
   .day { min-height:82px; padding:6px 3px; }
-  .calendarBooking { padding:2px; font-size:8px; }
+  .calendarBooking { padding:3px; font-size:10px; }
   .calendarBooking b { display:block; }
   .calendarBooking:nth-child(n+3) { display:none; }
-  .moreBookings { font-size:8px; }
+  .moreBookings { font-size:9px; }
 }

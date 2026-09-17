@@ -137,7 +137,11 @@ export default function Home() {
       <section className="workspace">
         <article className="calendarCard">
           <div className="cardHead">
-            <div><p>날짜 선택</p><h3>{month.getFullYear()}년 {month.getMonth() + 1}월</h3></div>
+            <div>
+              <p>날짜 선택</p>
+              <h3>{month.getFullYear()}년 {month.getMonth() + 1}월</h3>
+              <span className="calendarHelp">날짜를 클릭하고 교시를 선택한 뒤 예약자 이름을 입력해 주세요.</span>
+            </div>
             <div className="monthNav">
               <button onClick={() => moveMonth(-1)} aria-label="이전 달">←</button>
               <button onClick={() => setMonth(new Date(today.getFullYear(), today.getMonth(), 1))}>오늘</button>
