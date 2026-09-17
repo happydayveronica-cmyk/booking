@@ -6,21 +6,19 @@ body { margin:0; color:var(--ink); background:var(--paper); font-family:"Noto Sa
 button,input { font:inherit; }
 button { color:inherit; }
 main { min-height:100vh; }
-.topbar { height:94px; display:flex; align-items:center; gap:14px; padding:0 max(5vw,32px); border-bottom:1px solid #d7d9d2; }
-.brandMark { width:46px; height:46px; display:grid; place-items:center; border-radius:50%; color:white; background:var(--green); font-family:"DM Serif Display",serif; font-size:21px; }
-.topbar h1 { margin:1px 0 0; font-size:19px; }
+.topbar { min-height:122px; display:flex; align-items:center; gap:24px; padding:18px max(5vw,32px); border-bottom:1px solid #d7d9d2; }
+.brand { display:flex; align-items:center; gap:28px; min-width:0; }
+.schoolLogo { width:clamp(220px,25vw,340px); height:auto; object-fit:contain; }
+.topbar h1 { margin:0; font-size:clamp(21px,2.2vw,32px); line-height:1.25; white-space:nowrap; }
 .eyebrow,.cardHead p,.scheduleHead p { margin:0; color:#6a7f75; font-size:11px; font-weight:700; letter-spacing:.15em; }
 .todayChip { margin-left:auto; padding:10px 16px; border:1px solid #ccd4cc; border-radius:99px; font-size:13px; }
-.hero { display:flex; justify-content:space-between; align-items:flex-end; max-width:1200px; margin:0 auto; padding:62px 30px 44px; }
-.hero h2 { margin:10px 0 0; font-family:"DM Serif Display","Noto Sans KR",serif; font-size:clamp(38px,5vw,66px); line-height:1.12; font-weight:400; }
-.hero h2 em { color:var(--orange); font-weight:400; }
-.heroCopy { line-height:1.8; color:#67746e; font-size:14px; }
-.roomTabs { max-width:1200px; margin:0 auto; padding:0 30px; display:flex; gap:12px; }
-.roomTabs button { flex:1; display:flex; align-items:center; gap:15px; padding:17px 20px; border:1px solid var(--line); border-radius:14px 14px 0 0; background:#eeeae1; text-align:left; cursor:pointer; opacity:.67; }
+.roomTabs { max-width:1200px; margin:0 auto; padding:42px 30px 0; display:flex; gap:16px; }
+.roomTabs button { flex:1; min-height:116px; display:flex; align-items:center; gap:20px; padding:24px 28px; border:1px solid var(--line); border-radius:18px 18px 0 0; background:#eeeae1; text-align:left; cursor:pointer; opacity:.67; }
 .roomTabs button.active { color:white; background:var(--green); border-color:var(--green); opacity:1; }
-.roomTabs button>span { width:38px; height:38px; display:grid; place-items:center; border:1px solid currentColor; border-radius:50%; font-family:"DM Serif Display",serif; }
+.roomTabs button>span { width:52px; height:52px; flex:0 0 52px; display:grid; place-items:center; border:1px solid currentColor; border-radius:50%; font-family:"DM Serif Display",serif; font-size:20px; }
 .roomTabs strong,.roomTabs small { display:block; }
-.roomTabs small { margin-top:3px; font-size:11px; opacity:.67; }
+.roomTabs strong { font-size:18px; }
+.roomTabs small { margin-top:6px; font-size:12px; opacity:.67; }
 .workspace { padding:30px max(calc((100vw - 1140px)/2),30px) 70px; background:var(--green); display:grid; grid-template-columns:1.05fr .95fr; gap:24px; }
 .calendarCard,.scheduleCard { min-height:570px; padding:28px; border-radius:18px; background:#fbfaf5; box-shadow:0 14px 30px #15352b44; }
 .cardHead,.scheduleHead { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
@@ -63,8 +61,9 @@ footer { display:flex; align-items:center; gap:20px; padding:34px max(5vw,32px);
 footer span { color:var(--green); font-weight:700; }
 footer small { margin-left:auto; }
 @media(max-width:800px) {
-  .hero { padding-top:38px; align-items:flex-start; flex-direction:column; gap:18px; }
-  .heroCopy br { display:none; }
+  .topbar { align-items:flex-start; }
+  .brand { align-items:flex-start; flex-direction:column; gap:10px; }
+  .schoolLogo { width:min(300px,60vw); }
   .workspace { grid-template-columns:1fr; padding-left:16px; padding-right:16px; }
   .roomTabs { padding:0 16px; }
   .roomTabs button { padding:13px; }
@@ -75,9 +74,12 @@ footer small { margin-left:auto; }
   footer small { margin-left:0; }
 }
 @media(max-width:480px) {
-  .topbar { height:78px; padding:0 16px; }
+  .topbar { min-height:0; padding:14px 16px; }
+  .schoolLogo { width:min(250px,70vw); }
+  .topbar h1 { font-size:20px; }
   .todayChip { display:none; }
-  .hero { padding-left:18px; padding-right:18px; }
+  .roomTabs { padding-top:26px; }
+  .roomTabs button { min-height:96px; padding:16px; }
   .roomTabs small { display:none; }
   .periodGrid { grid-template-columns:repeat(2,1fr); }
 }

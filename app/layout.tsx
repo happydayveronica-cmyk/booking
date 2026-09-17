@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "특별실 예약",
-  description: "교과2실과 수업나눔카페 예약 서비스",
+  title: "반포고 면접 교실 예약",
+  description: "반포고등학교 면접 교실 예약 서비스",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 
 type Room = "교과2실" | "수업나눔카페";
 type Booking = {
@@ -109,21 +110,19 @@ export default function Home() {
   return (
     <main>
       <header className="topbar">
-        <div className="brandMark">쉼</div>
-        <div>
-          <p className="eyebrow">SPECIAL ROOM</p>
-          <h1>특별실 예약</h1>
+        <div className="brand">
+          <Image
+            className="schoolLogo"
+            src="/banpo-school-logo.png"
+            alt="반포고등학교"
+            width={1079}
+            height={290}
+            priority
+          />
+          <h1>반포고 면접 교실 예약</h1>
         </div>
         <div className="todayChip">오늘 · {today.getMonth() + 1}월 {today.getDate()}일</div>
       </header>
-
-      <section className="hero">
-        <div>
-          <p className="eyebrow">공간을 고르고, 시간을 담으세요</p>
-          <h2>우리의 수업을 위한<br /><em>가장 좋은 자리</em></h2>
-        </div>
-        <p className="heroCopy">달력에서 날짜를 선택하고 원하는 교시를 눌러<br />빠르고 간편하게 특별실을 예약하세요.</p>
-      </section>
 
       <div className="roomTabs" aria-label="특별실 선택">
         {rooms.map((item) => (
