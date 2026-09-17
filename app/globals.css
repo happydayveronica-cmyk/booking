@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+
+:root { --ink:#1f2e2a; --green:#244d41; --mint:#dce9de; --paper:#f7f4ec; --line:#d9ded7; --orange:#e36d43; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:var(--paper); font-family:"Noto Sans KR",sans-serif; }
+button,input { font:inherit; }
+button { color:inherit; }
+main { min-height:100vh; }
+.topbar { height:94px; display:flex; align-items:center; gap:14px; padding:0 max(5vw,32px); border-bottom:1px solid #d7d9d2; }
+.brandMark { width:46px; height:46px; display:grid; place-items:center; border-radius:50%; color:white; background:var(--green); font-family:"DM Serif Display",serif; font-size:21px; }
+.topbar h1 { margin:1px 0 0; font-size:19px; }
+.eyebrow,.cardHead p,.scheduleHead p { margin:0; color:#6a7f75; font-size:11px; font-weight:700; letter-spacing:.15em; }
+.todayChip { margin-left:auto; padding:10px 16px; border:1px solid #ccd4cc; border-radius:99px; font-size:13px; }
+.hero { display:flex; justify-content:space-between; align-items:flex-end; max-width:1200px; margin:0 auto; padding:62px 30px 44px; }
+.hero h2 { margin:10px 0 0; font-family:"DM Serif Display","Noto Sans KR",serif; font-size:clamp(38px,5vw,66px); line-height:1.12; font-weight:400; }
+.hero h2 em { color:var(--orange); font-weight:400; }
+.heroCopy { line-height:1.8; color:#67746e; font-size:14px; }
+.roomTabs { max-width:1200px; margin:0 auto; padding:0 30px; display:flex; gap:12px; }
+.roomTabs button { flex:1; display:flex; align-items:center; gap:15px; padding:17px 20px; border:1px solid var(--line); border-radius:14px 14px 0 0; background:#eeeae1; text-align:left; cursor:pointer; opacity:.67; }
+.roomTabs button.active { color:white; background:var(--green); border-color:var(--green); opacity:1; }
+.roomTabs button>span { width:38px; height:38px; display:grid; place-items:center; border:1px solid currentColor; border-radius:50%; font-family:"DM Serif Display",serif; }
+.roomTabs strong,.roomTabs small { display:block; }
+.roomTabs small { margin-top:3px; font-size:11px; opacity:.67; }
+.workspace { padding:30px max(calc((100vw - 1140px)/2),30px) 70px; background:var(--green); display:grid; grid-template-columns:1.05fr .95fr; gap:24px; }
+.calendarCard,.scheduleCard { min-height:570px; padding:28px; border-radius:18px; background:#fbfaf5; box-shadow:0 14px 30px #15352b44; }
+.cardHead,.scheduleHead { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
+.cardHead h3,.scheduleHead h3 { margin:5px 0 0; font-family:"DM Serif Display","Noto Sans KR",serif; font-size:25px; }
+.monthNav { display:flex; gap:6px; }
+.monthNav button { border:1px solid var(--line); background:white; border-radius:8px; padding:7px 10px; cursor:pointer; }
+.calendar { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
+.weekday { padding:5px; text-align:center; font-size:12px; color:#78857f; }
+.day { position:relative; aspect-ratio:1.15; border:0; border-radius:10px; background:transparent; cursor:pointer; }
+.day:hover { background:#e9eee8; }
+.day.selected { background:var(--orange); color:white; }
+.day.muted { opacity:.27; }
+.day i { position:absolute; right:7px; bottom:6px; width:18px; height:18px; display:grid; place-items:center; border-radius:50%; background:var(--green); color:white; font-size:9px; font-style:normal; }
+.day.selected i { background:white; color:var(--orange); }
+.scheduleHead>span { padding:7px 10px; border-radius:99px; color:var(--green); background:var(--mint); font-size:11px; font-weight:700; }
+.periodGrid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+.periodGrid button { min-height:96px; padding:12px 6px; border-radius:12px; cursor:pointer; transition:.16s ease; }
+.periodGrid b { font-family:"DM Serif Display",serif; font-size:26px; }
+.periodGrid span { margin-left:2px; font-size:12px; }
+.periodGrid small { display:block; margin-top:8px; font-size:10px; }
+.periodGrid .available { border:1px solid #cad5cb; background:#f5f7f1; }
+.periodGrid .available:hover,.periodGrid .chosen { transform:translateY(-2px); border-color:var(--orange); box-shadow:0 6px 14px #77331d1c; }
+.periodGrid .booked { border:1px solid #e3d7cc; color:#8b7a70; background:#eee7df; }
+.periodGrid .booked small { color:var(--orange); }
+.bookingForm,.bookingDetail { margin-top:22px; padding:18px; border-radius:12px; background:#e8eee7; }
+.bookingForm p { margin:0 0 12px; }
+.bookingForm { display:grid; grid-template-columns:1fr 1.4fr auto; gap:10px; align-items:end; }
+.bookingForm p { grid-column:1/-1; }
+.bookingForm label { font-size:11px; font-weight:700; }
+.bookingForm input { width:100%; margin-top:6px; padding:11px; border:1px solid #cbd6cc; border-radius:8px; background:white; outline:none; }
+.bookingForm input:focus { border-color:var(--green); }
+.bookingForm button,.bookingDetail button { border:0; border-radius:8px; padding:12px 16px; background:var(--green); color:white; cursor:pointer; }
+.bookingDetail { display:flex; justify-content:space-between; align-items:center; }
+.bookingDetail p,.bookingDetail strong,.bookingDetail span { display:block; margin:0 0 4px; }
+.bookingDetail span { color:#67746e; font-size:12px; }
+.bookingDetail button { background:var(--orange); }
+.emptyGuide { margin-top:22px; padding:20px; border:1px dashed #cbd3cb; border-radius:12px; color:#7c8983; text-align:center; font-size:13px; }
+.notice { margin-top:10px; color:var(--orange); font-size:12px; text-align:center; }
+footer { display:flex; align-items:center; gap:20px; padding:34px max(5vw,32px); color:#6b7771; background:#ede9df; font-size:12px; }
+footer span { color:var(--green); font-weight:700; }
+footer small { margin-left:auto; }
+@media(max-width:800px) {
+  .hero { padding-top:38px; align-items:flex-start; flex-direction:column; gap:18px; }
+  .heroCopy br { display:none; }
+  .workspace { grid-template-columns:1fr; padding-left:16px; padding-right:16px; }
+  .roomTabs { padding:0 16px; }
+  .roomTabs button { padding:13px; }
+  .calendarCard,.scheduleCard { min-height:auto; padding:20px 15px; }
+  .bookingForm { grid-template-columns:1fr; }
+  .bookingForm p { grid-column:auto; }
+  footer { align-items:flex-start; flex-direction:column; gap:6px; }
+  footer small { margin-left:0; }
+}
+@media(max-width:480px) {
+  .topbar { height:78px; padding:0 16px; }
+  .todayChip { display:none; }
+  .hero { padding-left:18px; padding-right:18px; }
+  .roomTabs small { display:none; }
+  .periodGrid { grid-template-columns:repeat(2,1fr); }
+}
